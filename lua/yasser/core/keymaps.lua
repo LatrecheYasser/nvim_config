@@ -5,11 +5,17 @@ keymap.set("i", "jk", "<ESC>")
 
 keymap.set("n", "<leader>nh", "nohl<CR>")
 keymap.set("n", "x", '"_x')
-keymap.set("n", "<leader>sv", "<C-w>v")
 
-keymap.set("n", "<leader>sh", "<C-w>s")
+------ Tmux
+keymap.set("n", "<leader>sv", "<C-w>v")
+keymap.set("n", "<leader>sb", "<C-w>s")
 keymap.set("n", "<leader>se", "<C-w>=")
 keymap.set("n", "<leader>sx", ":close<CR>")
+
+keymap.set("n", "<leader>sh", ":TmuxNavigateLeft<CR>")
+keymap.set("n", "<leader>sl", ":TmuxNavigateRight<CR>")
+keymap.set("n", "<leader>sk", ":TmuxNavigateUp<CR>")
+keymap.set("n", "<leader>sj", ":TmuxNavigateDown<CR>")
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
