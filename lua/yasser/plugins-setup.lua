@@ -15,6 +15,8 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("bluz71/vim-nightfly-colors")
+	use("jacoborus/tender.vim")
+	use("jaredgorski/spacecamp")
 	use("christoomey/vim-tmux-navigator")
 	use("szw/vim-maximizer")
 	use("numToStr/Comment.nvim")
@@ -45,6 +47,9 @@ return require("packer").startup(function(use)
 	use({ "glepnir/lspsaga.nvim", branch = "main" })
 	use("kabouzeid/nvim-lspinstall")
 	use("onsails/lspkind-nvim")
+	use("hrsh7th/cmp-nvim-lsp-signature-help")
+	use("hrsh7th/cmp-vsnip")
+	use("hrsh7th/cmp-nvim-lua")
 	-- formating and linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
@@ -80,6 +85,9 @@ return require("packer").startup(function(use)
 	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
+	--- for rust
+	use("simrat39/rust-tools.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
