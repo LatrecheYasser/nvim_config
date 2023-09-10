@@ -12,6 +12,8 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
+	--- dashboard
+	use({ "glepnir/dashboard-nvim", event = "VimEnter", dependencies = { "nvim-tree/nvim-web-devicons" } })
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("bluz71/vim-nightfly-colors")
@@ -87,7 +89,7 @@ return require("packer").startup(function(use)
 	-- Put this at the end after all plugins
 	--- for rust
 	use("simrat39/rust-tools.nvim")
-
+	use("pechorin/any-jump.vim")
 	if packer_bootstrap then
 		require("packer").sync()
 	end
