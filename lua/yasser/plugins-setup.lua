@@ -89,7 +89,7 @@ return require("packer").startup(function(use)
 	-- Put this at the end after all plugins
 	--- for rust
 	use("simrat39/rust-tools.nvim")
-	use("pechorin/any-jump.vim")
+	-- use("pechorin/any-jump.vim")
 	if packer_bootstrap then
 		require("packer").sync()
 	end

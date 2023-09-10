@@ -1,6 +1,6 @@
 local db_setup, db = pcall(require, "dashboard")
 if not db_setup then
-	print("no dashboard")
+	-- print("no dashboard")
 	return
 end
 

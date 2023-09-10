@@ -16,8 +16,8 @@ require("yasser.plugins.treesitter")
 require("yasser.plugins.gitsigns")
 require("yasser.plugins.toggleterm")
 require("yasser.plugins.rust-tool")
-require("yasser.plugins.any-jump")
-require("yasser.plugins.dashboard")
+-- require("yasser.plugins.any-jump")
+-- require("yasser.plugins.dashboard")
 -- LSP Diagnostics Options Setup
 local sign = function(opts)
 	vim.fn.sign_define(opts.name, {
