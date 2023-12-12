@@ -40,5 +40,8 @@ keymap.set("n", "<leader>j", "<cmd>ToggleTerm<cr>") --- toggle terminal
 keymap.set("n", "<leader>fp", "<cmd>Telescope project<cr>")
 -- trying to move lines
 
-keymap.set("n", "<C-up>", "<cmd>move -2<cr>")
-keymap.set("n", "<C-down>", "<cmd>move +1<cr>")
+keymap.set("n", "K", "<cmd>move -2<cr>")
+keymap.set("n", "J", "<cmd>move +1<cr>")
+---- ref
+--
+keymap.set("n", "gr", "<cmd>NiceReference<cr>")

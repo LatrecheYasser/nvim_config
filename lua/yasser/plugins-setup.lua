@@ -52,7 +52,15 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp-signature-help")
 	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/cmp-nvim-lua")
-	-- formating and linting
+	--- ref 
+    use({ 
+    'wiliamks/nice-reference.nvim', 
+    requires = { 
+        'kyazdani42/nvim-web-devicons', --optional
+        { 'rmagatti/goto-preview', config = function() require('goto-preview').setup {} end } --optional
+    } 
+    })
+    -- formating and linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 	use({
@@ -84,6 +92,16 @@ return require("packer").startup(function(use)
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
+	})
+	use({
+		"NeogitOrg/neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim", -- required
+			"nvim-telescope/telescope.nvim", -- optional
+			"sindrets/diffview.nvim", -- optional
+			"ibhagwan/fzf-lua", -- optional
+		},
+		config = true,
 	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

@@ -16,7 +16,8 @@ require("yasser.plugins.treesitter")
 require("yasser.plugins.gitsigns")
 require("yasser.plugins.toggleterm")
 require("yasser.plugins.rust-tool")
--- require("yasser.plugins.any-jump")
+require("yasser.plugins.neogit")
+require("yasser.plugins.nice-reference")
 -- require("yasser.plugins.dashboard")
 -- LSP Diagnostics Options Setup
 local sign = function(opts)
@@ -50,3 +51,7 @@ vim.cmd([[
 set signcolumn=yes
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
+
+vim.g.go_textobj_enabled = 0
+vim.g.go_doc_keywordprg_enabled = 0
+vim.g.go_def_mapping_enabled = 0
