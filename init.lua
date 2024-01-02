@@ -18,7 +18,8 @@ require("yasser.plugins.toggleterm")
 require("yasser.plugins.rust-tool")
 require("yasser.plugins.neogit")
 require("yasser.plugins.nice-reference")
--- require("yasser.plugins.dashboard")
+require("yasser.plugins.aerial")
+
 -- LSP Diagnostics Options Setup
 local sign = function(opts)
 	vim.fn.sign_define(opts.name, {

@@ -12,11 +12,14 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
+	-- colors
+	use("bluz71/vim-nightfly-colors")
+	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("AlexvZyl/nordic.nvim")
 	--- dashboard
 	use({ "glepnir/dashboard-nvim", event = "VimEnter", dependencies = { "nvim-tree/nvim-web-devicons" } })
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim")
-	use("bluz71/vim-nightfly-colors")
 	use("jacoborus/tender.vim")
 	use("jaredgorski/spacecamp")
 	use("christoomey/vim-tmux-navigator")
@@ -52,15 +55,20 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp-signature-help")
 	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/cmp-nvim-lua")
-	--- ref 
-    use({ 
-    'wiliamks/nice-reference.nvim', 
-    requires = { 
-        'kyazdani42/nvim-web-devicons', --optional
-        { 'rmagatti/goto-preview', config = function() require('goto-preview').setup {} end } --optional
-    } 
-    })
-    -- formating and linting
+	--- ref
+	use({
+		"wiliamks/nice-reference.nvim",
+		requires = {
+			"kyazdani42/nvim-web-devicons", --optional
+			{
+				"rmagatti/goto-preview",
+				config = function()
+					require("goto-preview").setup({})
+				end,
+			}, --optional
+		},
+	})
+	-- formating and linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 	use({
@@ -103,6 +111,7 @@ return require("packer").startup(function(use)
 		},
 		config = true,
 	})
+	use({ "stevearc/aerial.nvim" })
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	--- for rust
