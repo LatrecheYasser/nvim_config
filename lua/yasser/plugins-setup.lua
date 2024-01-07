@@ -49,7 +49,7 @@ return require("packer").startup(function(use)
 	-- LSP
 	use("neovim/nvim-lspconfig")
 	use("hrsh7th/cmp-nvim-lsp")
-	use({ "glepnir/lspsaga.nvim", branch = "main" })
+	use({ "nvimdev/lspsaga.nvim", branch = "main" })
 	use("kabouzeid/nvim-lspinstall")
 	use("onsails/lspkind-nvim")
 	use("hrsh7th/cmp-nvim-lsp-signature-help")
@@ -116,7 +116,8 @@ return require("packer").startup(function(use)
 	-- Put this at the end after all plugins
 	--- for rust
 	use("simrat39/rust-tools.nvim")
-	-- use("pechorin/any-jump.vim")
+	-- trouble
+	use({ "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } })
 	if packer_bootstrap then
 		require("packer").sync()
 	end

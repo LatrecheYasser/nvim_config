@@ -19,6 +19,7 @@ require("yasser.plugins.rust-tool")
 require("yasser.plugins.neogit")
 require("yasser.plugins.nice-reference")
 require("yasser.plugins.aerial")
+require("yasser.plugins.trouble")
 
 -- LSP Diagnostics Options Setup
 local sign = function(opts)
