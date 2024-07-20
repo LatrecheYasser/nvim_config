@@ -18,7 +18,6 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 --------------plugin keymaps
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
--- nvim tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 ------------- telescope
 
@@ -32,3 +31,9 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 ------ terminal
 keymap.set("n", "<leader>j", "<cmd>ToggleTerm<cr>") --- toggle terminal
 keymap.set("n", "<leader>fp", "<cmd>Telescope project<cr>")
+--- move lines
+keymap.set("n", "K", "<cmd>move -2<cr>")
+keymap.set("n", "J", "<cmd>move +1<cr>")
+---- ref
+--
+keymap.set("n", "gr", "<cmd>NiceReference<cr>")

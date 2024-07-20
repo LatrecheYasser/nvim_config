@@ -12,13 +12,13 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
-	use("wbthomason/packer.nvim")
-	use("nvim-lua/plenary.nvim")
-	use("bluz71/vim-nightfly-colors")
-	use("christoomey/vim-tmux-navigator")
-	use("szw/vim-maximizer")
-	use("numToStr/Comment.nvim")
-	use("nvim-tree/nvim-tree.lua")
+	use("wbthomason/packer.nvim") -- for package manager
+	use("nvim-lua/plenary.nvim") -- for lua scripts
+	use("bluz71/vim-nightfly-colors") -- colors
+	use("christoomey/vim-tmux-navigator") -- tmux
+	use("szw/vim-maximizer") -- for maximizing the current window
+	use("numToStr/Comment.nvim") -- for comments [gcc, and gc key bindings for commenting a line, or block]
+	use("nvim-tree/nvim-tree.lua") -- for tree
 	use("kyazdani42/nvim-web-devicons")
 	use("nvim-lualine/lualine.nvim")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
@@ -34,7 +34,7 @@ return require("packer").startup(function(use)
 	use("rafamadriz/friendly-snippets") -- useful snippets
 	use("fatih/vim-go")
 	--lsp servers
-
+	use("mrcjkb/rustaceanvim")
 	-- managing & installing lsp servers, linters & formatters
 	use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
 	use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
@@ -76,6 +76,26 @@ return require("packer").startup(function(use)
 		-- optional for floating window border decoration
 		requires = {
 			"nvim-lua/plenary.nvim",
+		},
+	})
+	use({
+		"folke/noice.nvim",
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+	})
+
+	use({
+		"wiliamks/nice-reference.nvim",
+		requires = {
+			"kyazdani42/nvim-web-devicons", --optional
+			{
+				"rmagatti/goto-preview",
+				config = function()
+					require("goto-preview").setup({})
+				end,
+			}, --optional
 		},
 	})
 	-- Automatically set up your configuration after cloning packer.nvim
