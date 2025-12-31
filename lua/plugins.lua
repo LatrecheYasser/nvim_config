@@ -54,5 +54,8 @@ require("lazy").setup({
     },
     {
 	import = plugins_path..".fidget.setup",
+    },
+    {
+	import = plugins_path..".indent-blankline.setup",
     }
 })
