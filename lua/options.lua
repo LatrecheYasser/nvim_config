@@ -2,6 +2,8 @@
 -- enable line numbers and relative numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.numberwidth = 4
+vim.opt.signcolumn = "yes"
 --- split below 
 vim.opt.splitbelow = true
 vim.opt.splitright = true

@@ -39,3 +39,67 @@ vim.keymap.set('n', '<leader><leader>l', require('smart-splits').swap_buf_right)
 ----- create new splits
 vim.keymap.set('n', '<leader>nh', vim.cmd.split)
 vim.keymap.set('n', '<leader>nv', vim.cmd.vsplit)
+--------------- lsp saga
+local opts = { noremap = true, silent = true }
+
+-- =========================
+-- HOVER / INFO
+-- =========================
+vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
+
+-- =========================
+-- GOTO / PEEK
+-- =========================
+vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts)
+vim.keymap.set("n", "sd", "<cmd>Lspsaga peek_definition<CR>", opts)
+vim.keymap.set("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>", opts)
+vim.keymap.set("n", "gi", "<cmd>Lspsaga goto_implementation<CR>", opts)
+
+-- =========================
+-- FINDER
+-- =========================
+vim.keymap.set("n", "gr", "<cmd>Lspsaga finder<CR>", opts)
+
+-- =========================
+-- CODE ACTIONS
+-- =========================
+vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+
+-- =========================
+-- RENAME
+-- =========================
+vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
+
+-- =========================
+-- DIAGNOSTICS
+-- =========================
+vim.keymap.set("n", "<leader>e", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+vim.keymap.set("n", "<leader>E", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
+
+vim.keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+
+-- Errors only
+vim.keymap.set("n", "[D", function()
+  require("lspsaga.diagnostic"):goto_prev({
+    severity = vim.diagnostic.severity.ERROR,
+  })
+end, opts)
+
+vim.keymap.set("n", "]D", function()
+  require("lspsaga.diagnostic"):goto_next({
+    severity = vim.diagnostic.severity.ERROR,
+  })
+end, opts)
+
+-- =========================
+-- CALL HIERARCHY
+-- =========================
+vim.keymap.set("n", "<leader>ci", "<cmd>Lspsaga incoming_calls<CR>", opts)
+vim.keymap.set("n", "<leader>co", "<cmd>Lspsaga outgoing_calls<CR>", opts)
+
+-- =========================
+-- TERMINAL (OPTIONAL)
+-- =========================
+vim.keymap.set("n", "<leader>tt", "<cmd>Lspsaga term_toggle<CR>", opts)

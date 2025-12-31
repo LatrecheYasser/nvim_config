@@ -48,5 +48,11 @@ require("lazy").setup({
     },
     {
 	import = plugins_path..".diff.setup",
+    },
+    {
+	import = plugins_path..".lspsaga.setup",
+    },
+    {
+	import = plugins_path..".fidget.setup",
     }
 })
