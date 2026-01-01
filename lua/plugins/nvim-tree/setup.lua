@@ -37,7 +37,6 @@ return {
 
     require("nvim-tree").setup({
       on_attach = my_on_attach, -- Attach the new mapping function here
-      create_in_closed_folder = true,
       hijack_cursor = true,
       sync_root_with_cwd = true,
       -- open_on_setup removed (Not supported anymore)

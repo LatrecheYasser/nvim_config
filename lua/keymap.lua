@@ -103,3 +103,5 @@ vim.keymap.set("n", "<leader>co", "<cmd>Lspsaga outgoing_calls<CR>", opts)
 -- TERMINAL (OPTIONAL)
 -- =========================
 vim.keymap.set("n", "<leader>tt", "<cmd>Lspsaga term_toggle<CR>", opts)
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
+

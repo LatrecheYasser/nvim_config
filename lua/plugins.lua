@@ -57,5 +57,8 @@ require("lazy").setup({
     },
     {
 	import = plugins_path..".indent-blankline.setup",
+    },
+    {
+	dir = "~/workspace/nvim-jj",
     }
 })
