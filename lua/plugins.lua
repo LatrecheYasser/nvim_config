@@ -60,5 +60,10 @@ require("lazy").setup({
     },
     {
 	dir = "~/workspace/nvim-jj",
+	opts = {
+	    diff_highlight = {
+		enable_highlights = false,
+	    }
+	},
     }
 })
