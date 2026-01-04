@@ -1,4 +1,13 @@
 
+--------------- bufferline
+vim.keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<leader>x", ":bdelete<CR>", { desc = "Close buffer" })
+
+--------------- navigation
+vim.keymap.set("n", "<C-->", "<C-o>", { desc = "Jump back" })
+vim.keymap.set("n", "<C-S-->", "<C-i>", { desc = "Jump forward" })
+
 ------------------- lsp
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(event)
