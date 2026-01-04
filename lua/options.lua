@@ -19,6 +19,8 @@ vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
 -- enable colors 
 vim.opt.termguicolors = true
+-- disable swap files (avoids E325 in lspsaga)
+vim.opt.swapfile = false
 
 --- set the leaderkey
 vim.g.mapleader = " "

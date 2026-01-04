@@ -59,6 +59,12 @@ require("lazy").setup({
 	import = plugins_path..".indent-blankline.setup",
     },
     {
+	import = plugins_path..".bufferline.setup",
+    },
+    {
+	import = plugins_path..".gitblame.setup",
+    },
+    {
 	dir = "~/workspace/nvim-jj",
 	config = function()
 	require("jj-nvim").setup({

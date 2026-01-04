@@ -1,6 +1,12 @@
 return {
-	"rebelot/kanagawa.nvim",
+	"catppuccin/nvim",
+	name = "catppuccin",
 	config = function()
-	    vim.cmd([[colorscheme kanagawa-wave]])
-	end, 
+		local bg = vim.opt.background:get()
+		if bg == "light" then
+			vim.cmd([[colorscheme catppuccin-latte]])
+		else
+			vim.cmd([[colorscheme catppuccin-mocha]])
+		end
+	end,
 }

@@ -1,11 +1,15 @@
 
+--------------- bufferline
+vim.keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<leader>x", ":bdelete<CR>", { desc = "Close buffer" })
+
+--------------- navigation
+vim.keymap.set("n", "<C-->", "<C-o>", { desc = "Jump back" })
+vim.keymap.set("n", "<C-S-->", "<C-i>", { desc = "Jump forward" })
+
 ------------------- lsp
-vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(event)
-    local opts = { buffer = event.buf }
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-  end,
-})
+
 
 
 --------------- telescope
@@ -51,8 +55,8 @@ vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
 -- =========================
 -- GOTO / PEEK
 -- =========================
-vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts)
-vim.keymap.set("n", "sd", "<cmd>Lspsaga peek_definition<CR>", opts)
+vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
+vim.keymap.set("n", "sd", "<cmd>Lspsaga goto_definition<CR>", opts)
 vim.keymap.set("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>", opts)
 vim.keymap.set("n", "gi", "<cmd>Lspsaga goto_implementation<CR>", opts)
 
