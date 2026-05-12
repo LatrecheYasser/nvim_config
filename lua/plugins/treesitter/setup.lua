@@ -7,13 +7,13 @@ return {
 	main = 'nvim-treesitter.config',
 	config = function()
 	    local ts = require("nvim-treesitter")
-	    ts.install({ "c", "lua", "vim", "vimdoc", "query", "go", "javascript", "python" })
+	    ts.install({ "c", "lua", "vim", "vimdoc", "query", "go", "javascript", "python", "terraform" })
 
 	    -- 2. Enable Highlighting via Autocmd (The new standard way)
 	    vim.api.nvim_create_autocmd("FileType", {
-		pattern = {"FileType"},
+		pattern = "*",
 		callback = function()
-			vim.treesitter.start()
+			pcall(vim.treesitter.start)
 		end,
 	    })
 	end,
