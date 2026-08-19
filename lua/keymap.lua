@@ -97,6 +97,24 @@ vim.keymap.set("n", "]D", function()
   })
 end, opts)
 
+local errors_only = false
+vim.keymap.set("n", "<leader>tw", function()
+  errors_only = not errors_only
+
+  local display = errors_only
+    and { severity = { min = vim.diagnostic.severity.ERROR } }
+    or true
+
+  vim.diagnostic.config({
+    virtual_text = display,
+    virtual_lines = display,
+    signs = display,
+    underline = display,
+  })
+
+  vim.notify(errors_only and "Diagnostics: errors only" or "Diagnostics: all severities")
+end, { desc = "Toggle warning diagnostics" })
+
 -- =========================
 -- CALL HIERARCHY
 -- =========================
@@ -108,4 +126,3 @@ vim.keymap.set("n", "<leader>co", "<cmd>Lspsaga outgoing_calls<CR>", opts)
 -- =========================
 vim.keymap.set("n", "<leader>tt", "<cmd>Lspsaga term_toggle<CR>", opts)
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
-
