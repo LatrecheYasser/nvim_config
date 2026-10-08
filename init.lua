@@ -5,3 +5,4 @@ require("plugins")
 
 -------------------------- set keymaps --------------------------------- 
 require("keymap")
+require("bazel").setup()

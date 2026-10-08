@@ -30,6 +30,16 @@ used for Bazel Java buffers.
 | `:BazelJavaSync //path/to/module:target` | Sync explicit Java targets in the current module |
 | `:BazelJavaLog` | View sync output, including authentication prompts |
 | `<leader>jo` | Organize Java imports |
+| `:BazelBuild` / `<leader>bb` | Build the current module's Java targets |
+| `:BazelTest` / `<leader>bt` | Run tests in the current Bazel package |
+| `:BazelTestFile` / `<leader>bf` | Run the current Java test class |
+| `:BazelFormat` | Run the repo's Java formatter, or buildifier for BUILD/.bzl files |
+
+Build/test commands save the current buffer and run in a terminal split with the
+workspace root as their working directory. They accept explicit targets and flags,
+for example `:BazelTest //path:tests --test_filter=MyTest#methodName`. Default test
+scope is `:all --build_tests_only`; default builds select Java targets rather than
+deployment/image targets. Java and Starlark Tree-sitter parsers are installed.
 
 Run `:BazelJavaSync` after changing BUILD dependencies, generated code, or branches,
 or after `bzl clean`. A failed Bazel build keeps the previous cached project. First-time
