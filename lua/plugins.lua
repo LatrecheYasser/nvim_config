@@ -29,6 +29,9 @@ require("lazy").setup({
 
     },
     {
+	import = plugins_path..".java.setup",
+    },
+    {
 	import = plugins_path..".blink_cmp.setup"
     },
     {
