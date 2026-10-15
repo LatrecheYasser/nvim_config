@@ -63,7 +63,7 @@ vim.keymap.set("n", "gi", "<cmd>Lspsaga goto_implementation<CR>", opts)
 -- =========================
 -- FINDER
 -- =========================
-vim.keymap.set("n", "gr", "<cmd>Lspsaga finder<CR>", opts)
+vim.keymap.set("n", "gr", "<cmd>Lspsaga finder ref<CR>", opts)
 
 -- =========================
 -- CODE ACTIONS
